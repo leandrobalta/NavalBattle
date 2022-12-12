@@ -1,3 +1,7 @@
+// Aluno - Matricula
+// Leandro Braga - 2022004260
+// Joao Pedro Renno - 2022010651
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,7 +11,34 @@
 //basicamente voce precisa implementar as funcoes
 //"adiciona_ponto" e "busca_ponto"
 
+typedef struct IOcean
+{
+  int* xs;
+  int y;
+  Ocean prox;
+}Ocean;
 
+int busca_ponto(Ocean* O, int x, int y){
+
+
+  return 1;
+}
+
+Ocean* adiciona_ponto(Ocean* O, int x, int y, int tamanho){
+  Ocean* novoOceano = O;
+  Ocean ocean;
+
+  if(tamanho == 0){
+    O[0].
+  }
+
+
+  return novoOceano; 
+}
+
+void libera_oceano(Ocean* O){
+
+}
 
 int main(int argc, char * argv[]){
   int dimensao;
@@ -16,8 +47,8 @@ int main(int argc, char * argv[]){
   
   //TODO: GUARDAR OS OCEANOS DE A E B, MUDE PARA A ESTRUTURA
   //DE DADOS QUE VOCE QUISER
-  oceano pontosJA = NULL;
-  oceano pontosJB = NULL;
+  Ocean* pontosJA = NULL;
+  Ocean* pontosJB = NULL;
   
   
   scanf("%d %d %d", &dimensao, &num_pontos, &num_tiros);
@@ -25,7 +56,7 @@ int main(int argc, char * argv[]){
   
   //Definindo uma semente para gerar os mesmos pontos
   srand(dimensao);
-
+  
   //Jogador A gera pontos para colocar os barcos
   printf("Jogador A coloca barcos:\n");
   for(int i = 0; i < num_pontos; i++){
@@ -38,7 +69,7 @@ int main(int argc, char * argv[]){
   
     if(i<5) printf("(%d, %d)\n", x, y);
     
-    pontosJA = adiciona_ponto(pontosJA, x, y); //TODO: Adiciona x, y no oceano A
+    pontosJA = adiciona_ponto(pontosJA, x, y, i); //TODO: Adiciona x, y no oceano A
   }
   
   
@@ -54,7 +85,7 @@ int main(int argc, char * argv[]){
       
     if(i<5) printf("(%d, %d)\n", x, y);
     
-    pontosJB = adiciona_ponto(pontosJB, x, y); //TODO: Adiciona x, y no oceano B
+    pontosJB = adiciona_ponto(pontosJB, x, y, i); //TODO: Adiciona x, y no oceano B
   }
   
   printf("...\n\nCada jogador vai dar %d tiros\n", num_tiros);
